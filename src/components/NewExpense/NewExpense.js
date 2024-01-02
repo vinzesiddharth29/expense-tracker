@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './NewExpense.css';
-function NewExpense(){
+function NewExpense(props){
     let [enteredTitle, setTitle] = useState('');
     let [enteredPrice, setPrice] = useState('');
     let [enteredDate, setDate] = useState('');
@@ -22,7 +22,7 @@ function NewExpense(){
             price: enteredPrice,
             date: new Date(enteredDate)
         };
-        console.log(data);
+        props.onNewExpense(data);
         setTitle('');
         setPrice('');
         setDate('');
